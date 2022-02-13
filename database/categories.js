@@ -13,7 +13,7 @@ var categories = {
       "art-nouveau-goddess-statue-marble",
       "french-empire-bronze-bust-charles-the-10th",
       "italian-art-portrait-pastel-georgian-era",
-      "art-nouveau-gilded-bronze-candlabra",
+      "art-nouveau-sgilded-bronze-candlabra",
       "art-nouveau-candelabra-tiffany-studios",
       "paintings-english-jose-weiss-victorian",
       "paintings-scottish-john-reid-murray",
@@ -232,8 +232,6 @@ var categories = {
       "belle-epoque-crystal-candelabra",
       "belle-epoque-bust-gilt-bronze-red-marble",
       "belle-epoque-bust-gilt-bronze-red-marble-lady",
-      "curiousities-orientalist-lamp-austrian",
-      "porcelain-cabinet-plates-royal-vienna",
     ],
   },
 
