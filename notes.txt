@@ -1,0 +1,1 @@
+- Do you want the "condition" field? (currently not supported in DB)

@@ -1,0 +1,3 @@
+curl -X POST localhost:3001/admin/listings \
+     -H 'Content-Type: application/json' \
+     -d @./testcall.json
