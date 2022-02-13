@@ -1,7 +1,7 @@
 
 
 const express = require('express');
-const mysql = require('mysql2/promise');
+const mysql = require('mysql2');
 const fileUpload = require('express-fileupload');
 const { dbUser, dbPassword, dbName } = require("./envVars");
 
@@ -11,20 +11,14 @@ const app = express();
 
 const main = async () => {
     // create a connection object
-    const pool = await mysql.createPool({
+    const pool = mysql.createPool({
         host: "localhost",
         user: dbUser,
         password: dbPassword,
         database: dbName
     });
 
-    // `mysql://${dbUser}:${dbPassword}@0.0.0.0:3306/${dbName}`);
-
-    const pool = await mysql.createPool({host:'localhost', user: 'root', database: 'test'});
-    // now get a Promise wrapped instance of that pool
-    // const promisePool = pool.promise();
-
-    app.set('db', pool);
+    app.set('db', await pool.promise());
 
     // require CORS
     const cors = require('cors')
