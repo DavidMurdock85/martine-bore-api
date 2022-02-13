@@ -22,29 +22,9 @@ var categories = {
 
   // Paintings Routes
 
-  // Paintings
-
-  paintings: {
-    route: "paintings",
-    title: "Paintings",
-    breadcrumbs: [
-      { url: "/", name: "Home" },
-      { url: "/categories/paintings", name: "Paintings" },
-    ],
-    list: [
-      "paintings-seascape-french--impressionist-alfred-victor-fournier",
-      "paintings-archangel-michael-spanish-colonial",
-      "paintings-seascape-dutch-post-impressionist",
-      "paintings-landscape-impressionist-fairlie-harmar",
-      "paintings-landscape-winter-english-john-charles-moody",
-      "paintings-english-harold-goldthwait-near-pateham-sussex",
-      "paintings-english-harold-goldthwait",
-    ],
-  },
-
   // Landscape Paintings
 
-  paintings: {
+  "landscape-paintings": {
     route: "landscape-paintings",
     title: "Landscape Paintings",
     breadcrumbs: [
@@ -52,20 +32,15 @@ var categories = {
       { url: "/categories/landscape-paintings", name: "Landscape Paintings" },
     ],
     list: [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      "paintings-landscape-winter-english-john-charles-moody",
+      "paintings-english-harold-goldthwait-near-pateham-sussex",
+      "paintings-english-harold-goldthwait",
     ],
   },
 
   // Seascape Paintings
 
-  paintings: {
+  "seascape-paintings": {
     route: "seascape-paintings",
     title: "Seascape Paintings",
     breadcrumbs: [
@@ -73,20 +48,14 @@ var categories = {
       { url: "/categories/seascape-paintings", name: "Seascape Paintings" },
     ],
     list: [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      "paintings-seascape-french--impressionist-alfred-victor-fournier",
+      "paintings-seascape-dutch-post-impressionist",
     ],
   },
 
   // Cityscape Paintings
 
-  paintings: {
+  "cityscape-paintings": {
     route: "cityscape-paintings",
     title: "Cityscape Paintings",
     breadcrumbs: [
@@ -94,20 +63,13 @@ var categories = {
       { url: "/categories/cityscape-paintings", name: "Cityscape Paintings" },
     ],
     list: [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
+      "paintings-landscape-impressionist-fairlie-harmar",
     ],
   },
 
   // Still Life Paintings
 
-  paintings: {
+  "still-life-paintings": {
     route: "still-life-paintings",
     title: "Still Life Paintings",
     breadcrumbs: [
@@ -115,41 +77,25 @@ var categories = {
       { url: "/categories/still-life-paintings", name: "Still Life Paintings" },
     ],
     list: [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
     ],
   },
 
   // Animal Paintings
 
-  paintings: {
-    route: "Animal-paintings",
+  "animal-paintings": {
+    route: "animal-paintings",
     title: "Animal Paintings",
     breadcrumbs: [
       { url: "/", name: "Home" },
       { url: "/categories/animal-paintings", name: "Animal Paintings" },
     ],
     list: [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
     ],
   },
 
   // Portrait Paintings
 
-  paintings: {
+  "portrait-paintings": {
     route: "portrait-paintings",
     title: "Portrait Paintings",
     breadcrumbs: [
@@ -157,18 +103,8 @@ var categories = {
       { url: "/categories/portrait-paintings", name: "Portrait Paintings" },
     ],
     list: [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
     ],
   },
-
-
 
   // Clocks
 
@@ -429,14 +365,6 @@ var categories = {
       { url: "/categories/english-art", name: "English Art" },
     ],
     list: [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
     ],
   },
 
