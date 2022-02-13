@@ -3,6 +3,9 @@
 const express = require('express');
 const mysql = require('mysql2');
 const fileUpload = require('express-fileupload');
+const passport = require('passport');
+const Strategy = require('passport-http-jwt-bearer').Strategy;
+
 const { dbUser, dbPassword, dbName } = require("./envVars");
 
 
@@ -20,17 +23,25 @@ const main = async () => {
 
     app.set('db', await pool.promise());
 
+    // passport
+    passport.use(new Strategy(process.env.JWT_SECRET_FOR_ACCESS_TOKEN, (token, cb) => {
+        console.log(token);
+        return cb(null, {}, { scope: 'admin' } );
+    }));
+
     // require CORS
-    const cors = require('cors')
+    const cors = require('cors');
 
     // use CORS
     app.use(cors());
     app.use(express.json());
+    app.use(express.urlencoded({ extended: true }));
     app.use(fileUpload());
+    app.use(passport.initialize());
 
-    app.use('/categories', require('./categoryRoutes'));
-    app.use('/products', require('./productRoutes'));
-    // app.use('/admin', require('./adminRoutes'));
+    app.use('/auth', require('./routes/authRoutes'));
+    app.use('/categories', require('./routes/categoryRoutes'));
+    app.use('/products', require('./routes/productRoutes'));
 
 
     const PORT = process.env.PORT || 3001;

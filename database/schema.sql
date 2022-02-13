@@ -33,5 +33,15 @@ CREATE TABLE images (
     PRIMARY KEY (id)
 );
 
+CREATE TABLE users (
+    id int NOT NULL AUTO_INCREMENT,
+    username varchar(250) NOT NULL,
+    passwordDigest varchar(250) NOT NULL,
+    token varchar(250),
+    PRIMARY KEY (id),
+    UNIQUE(username)
+);
+
+
 
 

@@ -1,5 +1,6 @@
-var express = require('express'),
+const express = require('express'),
     router = express.Router();
+const passport = require('passport');
 
 // GET @ /categories
 router.get('/', async (req, res, next) => {
@@ -56,30 +57,33 @@ router.get('/:categoryId/products', async (req, res, next) => {
 });
 
 // TODO requires auth
-router.post('/:categoryId/products', async (req, res, next) => {
-  try {
-    const db = req.app.get('db');
+router.post('/:categoryId/products',
+  passport.authenticate('bearer', { session: false }),
+  async (req, res, next) => {
+    try {
+      const db = req.app.get('db');
 
-    // create route from title
-    const route = req.body.title.replace(/\s+/g, '-').toLowerCase();
+      // create route from title
+      const route = req.body.title.replace(/\s+/g, '-').toLowerCase();
 
-    // assemble newListing for entry to db
-    const newListing = {
-      ...req.body,
-      route,
-      categoryId: req.params.categoryId
-    };
+      // assemble newListing for entry to db
+      const newListing = {
+        ...req.body,
+        route,
+        categoryId: req.params.categoryId
+      };
 
-    const [result] = await db.query("INSERT INTO products SET ?", newListing);
+      const [result] = await db.query("INSERT INTO products SET ?", newListing);
 
-    res.send({
-      ...newListing,
-      id: result.insertId,
-    });
-  } catch (err) {
-    next(err);
+      res.send({
+        ...newListing,
+        id: result.insertId,
+      });
+    } catch (err) {
+      next(err);
+    }
   }
-});
+);
 
 
 module.exports = router;

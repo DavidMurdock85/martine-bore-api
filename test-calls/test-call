@@ -1,0 +1,4 @@
+curl -X POST localhost:3001/categories/8/products \
+     -H 'Content-Type: application/json' \
+     -H 'Authorization: Bearer token' \
+     -d @./testcall.json

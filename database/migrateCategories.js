@@ -3,9 +3,16 @@
 const mysql = require('mysql2/promise');
 const categories = require("./categories");
 const { dbUser, dbPassword, dbName } = require("../envVars");
+const { hash } = require('../services/tokenService');
 
 const main = async () => {
   const connection = await mysql.createConnection(`mysql://${dbUser}:${dbPassword}@0.0.0.0:3306/${dbName}`);
+
+  console.log('Inserting admin user...');
+  await connection.query('INSERT INTO users SET ?', {
+    username: process.env.ADMIN_USER,
+    passwordDigest: await hash(process.env.ADMIN_PASSWORD)
+  });
 
   console.log('Inserting categories...');
   await Promise.all(Object.values(categories.categories).map(async (category) => {

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # create martine db
-# mysql --host="0.0.0.0" --port="3306" --user="${MARTINE_DB_USER}" --password="${MARTINE_DB_USER}" --database="mysql" --execute="CREATE DATABASE ${MARTINE_DB};"
+mysql --host="0.0.0.0" --port="3306" --user="${MARTINE_DB_USER}" --password="${MARTINE_DB_PASSWORD}" --database="mysql" --execute="CREATE DATABASE ${MARTINE_DB};"
 
 # create tables
 mysql --host="0.0.0.0" --port="3306" --user="${MARTINE_DB_USER}" --password="${MARTINE_DB_PASSWORD}" "${MARTINE_DB}" < database/schema.sql
