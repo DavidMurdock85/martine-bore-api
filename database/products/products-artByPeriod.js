@@ -1723,7 +1723,7 @@ var artByPeriod = {
           "/art-by-period/art-nouveau/art-nouveau-vase-cameo-glass-emile-galle-rio-3.jpeg",
       },
     ],
-    productTitle: "Émile Gallé Rio de Janeiro Cameo Glass Vase",
+    productTitle: "Emile Gallé Rio de Janeiro Cameo Glass Vase",
     period: "Art Nouveau",
     date: "1890-1910",
     origin: "France",

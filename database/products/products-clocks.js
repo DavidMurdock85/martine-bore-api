@@ -6,21 +6,21 @@ var clocks = {
     images: [
       {
         original:
-          "/decorative-arts/clocks/clocks-ormolu-louis-xiv-french-1.jpeg",
+          "/clocks/clocks-ormolu-louis-xiv-french-1.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-ormolu-louis-xiv-french-1.jpeg",
+          "/clocks/clocks-ormolu-louis-xiv-french-1.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-ormolu-louis-xiv-french-2.jpeg",
+          "/clocks/clocks-ormolu-louis-xiv-french-2.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-ormolu-louis-xiv-french-2.jpeg",
+          "/clocks/clocks-ormolu-louis-xiv-french-2.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-ormolu-louis-xiv-french-3.jpeg",
+          "/clocks/clocks-ormolu-louis-xiv-french-3.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-ormolu-louis-xiv-french-3.jpeg",
+          "/clocks/clocks-ormolu-louis-xiv-french-3.jpeg",
       },
     ],
     productTitle: "18th Century French Louis XIV Ormolu Clock",
@@ -41,21 +41,21 @@ var clocks = {
     images: [
       {
         original:
-          "/decorative-arts/clocks/clocks-mantle-planchon-au-royal-french-empire-1.jpeg",
+          "/clocks/clocks-mantle-planchon-au-royal-french-empire-1.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-mantle-planchon-au-royal-french-empire-1.jpeg",
+          "/clocks/clocks-mantle-planchon-au-royal-french-empire-1.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-mantle-planchon-au-royal-french-empire-2.jpeg",
+          "/clocks/clocks-mantle-planchon-au-royal-french-empire-2.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-mantle-planchon-au-royal-french-empire-2.jpeg",
+          "/clocks/clocks-mantle-planchon-au-royal-french-empire-2.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-mantle-planchon-au-royal-french-empire-3.jpeg",
+          "/clocks/clocks-mantle-planchon-au-royal-french-empire-3.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-mantle-planchon-au-royal-french-empire-3.jpeg",
+          "/clocks/clocks-mantle-planchon-au-royal-french-empire-3.jpeg",
       },
     ],
     productTitle: "Planchon au Palais Royal Mantle Clock with Rhinestones",
@@ -77,21 +77,21 @@ var clocks = {
     images: [
       {
         original:
-          "/decorative-arts/clocks/clocks-ad-mougin-french-empire-1.jpeg",
+          "/clocks/clocks-ad-mougin-french-empire-1.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-ad-mougin-french-empire-1.jpeg",
+          "/clocks/clocks-ad-mougin-french-empire-1.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-ad-mougin-french-empire-2.jpeg",
+          "/clocks/clocks-ad-mougin-french-empire-2.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-ad-mougin-french-empire-2.jpeg",
+          "/clocks/clocks-ad-mougin-french-empire-2.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-ad-mougin-french-empire-3.jpeg",
+          "/clocks/clocks-ad-mougin-french-empire-3.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-ad-mougin-french-empire-3.jpeg",
+          "/clocks/clocks-ad-mougin-french-empire-3.jpeg",
       },
     ],
     productTitle: "Gilded Marble Mantle Clock by A.D. Mougin",
@@ -113,27 +113,27 @@ var clocks = {
     images: [
       {
         original:
-          "/decorative-arts/clocks/clocks-putti-french-empire-1.jpeg",
+          "/clocks/clocks-putti-french-empire-1.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-putti-french-empire-1.jpeg",
+          "/clocks/clocks-putti-french-empire-1.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-putti-french-empire-2.jpeg",
+          "/clocks/clocks-putti-french-empire-2.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-putti-french-empire-2.jpeg",
+          "/clocks/clocks-putti-french-empire-2.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-putti-french-empire-3.jpeg",
+          "/clocks/clocks-putti-french-empire-3.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-putti-french-empire-3.jpeg",
+          "/clocks/clocks-putti-french-empire-3.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-putti-french-empire-4.jpeg",
+          "/clocks/clocks-putti-french-empire-4.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-putti-french-empire-4.jpeg",
+          "/clocks/clocks-putti-french-empire-4.jpeg",
       },
     ],
     productTitle: "Empire Gilt Marble Putti Clock",
@@ -154,21 +154,21 @@ var clocks = {
     images: [
       {
         original:
-          "/decorative-arts/clocks/clocks-french-gilded-sky-blue-1.jpeg",
+          "/clocks/clocks-french-gilded-sky-blue-1.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-french-gilded-sky-blue-1.jpeg",
+          "/clocks/clocks-french-gilded-sky-blue-1.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-french-gilded-sky-blue-2.jpeg",
+          "/clocks/clocks-french-gilded-sky-blue-2.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-french-gilded-sky-blue-2.jpeg",
+          "/clocks/clocks-french-gilded-sky-blue-2.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-french-gilded-sky-blue-3.jpeg",
+          "/clocks/clocks-french-gilded-sky-blue-3.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-french-gilded-sky-blue-3.jpeg",
+          "/clocks/clocks-french-gilded-sky-blue-3.jpeg",
       },
     ],
     productTitle: "Empire Style Blue Porcelain Mantle Clock c. 1900",
@@ -189,21 +189,21 @@ var clocks = {
     images: [
       {
         original:
-          "/decorative-arts/clocks/clocks-swiss-lecoultre-atmos-1.jpeg",
+          "/clocks/clocks-swiss-lecoultre-atmos-1.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-swiss-lecoultre-atmos-1.jpeg",
+          "/clocks/clocks-swiss-lecoultre-atmos-1.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-swiss-lecoultre-atmos-2.jpeg",
+          "/clocks/clocks-swiss-lecoultre-atmos-2.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-swiss-lecoultre-atmos-2.jpeg",
+          "/clocks/clocks-swiss-lecoultre-atmos-2.jpeg",
       },
       {
         original:
-          "/decorative-arts/clocks/clocks-swiss-lecoultre-atmos-3.jpeg",
+          "/clocks/clocks-swiss-lecoultre-atmos-3.jpeg",
         thumbnail:
-          "/decorative-arts/clocks/clocks-swiss-lecoultre-atmos-3.jpeg",
+          "/clocks/clocks-swiss-lecoultre-atmos-3.jpeg",
       },
     ],
     productTitle: "Jaeger LeCoultre Atmos Clock",
