@@ -57,9 +57,9 @@ router.post('/:productId/images',
       const files = req.files;
       const imageResults = await Promise.all(Object.values(files).map(async (file, index) => {
         const imageName = `${routes.productRoute}-${index}.${file.name.split('.').pop()}`;
-        const original = `${process.env.IMAGES_DIR}/${routes.categoryRoute}/${imageName}`;
+        const original = `/${routes.categoryRoute}/${imageName}`;
 
-        await fs.writeFile(original, file.data);
+        await fs.writeFile(`${process.env.IMAGES_DIR}/${original}`, file.data);
 
         const image = {
           productId,
