@@ -1,0 +1,11 @@
+#!/bin/bash
+
+TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDQ4Nzg3NTcsImlhdCI6MTY0NDc5MjM1Nywic2NvcGVzIjpbXSwidXNlcklkIjoxfQ.ceZ8gG_oomQdSI7IF5BJbRngYA8cABOyftFx9Fz2wmg
+
+curl -X POST \
+     -H "Authorization: Bearer ${TOKEN}" \
+     -F "image1=@./test-calls/sus.png" \
+     -F "image2=@./test-calls/rl.png" \
+     -F "image3=@./test-calls/spooky.jpg" \
+     localhost:3001/products/15/images
+

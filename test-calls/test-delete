@@ -1,0 +1,8 @@
+#!/bin/bash
+
+TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDQ4Nzg3NTcsImlhdCI6MTY0NDc5MjM1Nywic2NvcGVzIjpbXSwidXNlcklkIjoxfQ.ceZ8gG_oomQdSI7IF5BJbRngYA8cABOyftFx9Fz2wmg
+
+curl -X DELETE localhost:3001/products/8 \
+     -H 'Content-Type: application/json' \
+     -H "Authorization: Bearer ${TOKEN}" \
+     -d @./test-calls/testcall.json

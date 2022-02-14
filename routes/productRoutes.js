@@ -3,6 +3,8 @@ const express = require('express'),
 
 const passport = require('passport');
 
+const fs = require('fs').promises;
+
 //request to get product object from database and then get images for that product using its id
 router.get('/:productRoute', async (req, res, next) => {
   try {
@@ -22,28 +24,60 @@ router.get('/:productRoute', async (req, res, next) => {
 });
 
 //request to get product object from database and then get images for that product using its id
-router.post('/:productId/images',
-  passport.authenticate('bearer', { session: false }),
+router.delete('/:productId',
+  passport.authenticate('jwt-bearer', { session: false }),
   async (req, res, next) => {
     try {
       const db = req.app.get('db');
+      // select everything from products where id = productId
+      const productId = req.params.productId;
+      await db.query(`DELETE FROM images where productId=${productId}`);
+      await db.query(`DELETE FROM products where id=${productId}`);
+
+      res.sendStatus(204);
+    } catch (err) {
+      next(err);
+    }
+  }
+);
+
+//request to get product object from database and then get images for that product using its id
+router.post('/:productId/images',
+  passport.authenticate('jwt-bearer', { session: false }),
+  async (req, res, next) => {
+    try {
+      const db = req.app.get('db');
+      const productId = req.params.productId;
+      const [rows] = await db.query(
+        `SELECT pr.route as productRoute, ca.route as categoryRoute FROM products pr join categories ca on ca.id = pr.categoryId where pr.id='${productId}'`
+      );
+      const routes = rows[0];
 
       // create image on server (limit size?)
+      const files = req.files;
+      const imageResults = await Promise.all(Object.values(files).map(async (file, index) => {
+        const imageName = `${routes.productRoute}-${index}.${file.name.split('.').pop()}`;
+        const original = `${process.env.IMAGES_DIR}/${routes.categoryRoute}/${imageName}`;
 
-      const original = "";
+        await fs.writeFile(original, file.data);
 
-      const image = {
-        productId: req.params.productId,
-        original
-      };
+        const image = {
+          productId,
+          original,
+          thumbnail: original
+        };
+
+        const [result] =  await db.query("INSERT INTO images SET ?", image);
+
+        return {
+          ...image,
+          id: result.insertId
+        }
+      }));
 
       // create image reference in db
-      const [result] =  await db.query("INSERT INTO images SET ?", image);
 
-      res.send({
-        ...image,
-        id: result.insertId
-      });
+      res.send(imageResults);
     } catch (err) {
       next(err);
     }

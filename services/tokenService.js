@@ -51,8 +51,6 @@ const getUser = async (db, username, password) => {
   const [rows] = await db.query(`SELECT * FROM users where username='${username}'`);
   const user = rows[0];
 
-  console.log(user);
-  console.log(await compare(password, user.passwordDigest));
   if (!user) {
     // user not found
     return;

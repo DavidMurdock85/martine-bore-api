@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDQ4Nzg3NTcsImlhdCI6MTY0NDc5MjM1Nywic2NvcGVzIjpbXSwidXNlcklkIjoxfQ.ceZ8gG_oomQdSI7IF5BJbRngYA8cABOyftFx9Fz2wmg
+TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NDQ3OTU0ODUsImlhdCI6MTY0NDc5NTQ4NSwic2NvcGVzIjpbXSwidXNlcklkIjoxfQ.IF1E3riJY4OvWLZ1n9Q1HTz-nUVczyMPyXIeIDwxKuM
+curl -X POST localhost:3001/categories/8/products \
+     -H 'Content-Type: application/json' \
+     -H "Authorization: Bearer ${TOKEN}" \
+     -d @./test-calls/testcall.json

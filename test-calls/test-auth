@@ -6,10 +6,3 @@ curl -X POST \
      --data-urlencode 'username=martine808' \
      --data-urlencode 'password=redryder' \
      localhost:3001/auth/token
-     #-d "username=martine&password=redryder" \
-
-
-
-
-
-     #localhost:3001/auth/login

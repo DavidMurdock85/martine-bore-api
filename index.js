@@ -25,8 +25,7 @@ const main = async () => {
 
     // passport
     passport.use(new Strategy(process.env.JWT_SECRET_FOR_ACCESS_TOKEN, (token, cb) => {
-        console.log(token);
-        return cb(null, {}, { scope: 'admin' } );
+        return cb(null, { id: token.userId }, token);
     }));
 
     // require CORS
@@ -42,6 +41,7 @@ const main = async () => {
     app.use('/auth', require('./routes/authRoutes'));
     app.use('/categories', require('./routes/categoryRoutes'));
     app.use('/products', require('./routes/productRoutes'));
+    app.use('/images', require('./routes/imageRoutes'));
 
 
     const PORT = process.env.PORT || 3001;
