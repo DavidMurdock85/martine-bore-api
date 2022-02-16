@@ -29,7 +29,10 @@ const generateAccessToken = async (user, scope) => {
     scopes: scopes || [],
     userId: Number(user.id),
   };
-  return signJwt(payload, process.env.JWT_SECRET_FOR_ACCESS_TOKEN);
+  return {
+    accessToken: await signJwt(payload, process.env.JWT_SECRET_FOR_ACCESS_TOKEN),
+    accessTokenExpiresAt: exp
+  }
 }
 
 const signJwt = async (payload, secret) => {

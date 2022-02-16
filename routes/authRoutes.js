@@ -1,4 +1,4 @@
-const { getUser, generateAccessToken, hash } = require('../services/tokenService');
+const { getUser, generateAccessToken } = require('../services/tokenService');
 
 const express = require('express'),
     router = express.Router();
@@ -14,7 +14,7 @@ router.post('/token', async (req, res, next) => {
     if(user) {
       const token = await generateAccessToken(user);
 
-      res.send({ accessToken: token, user: { id: user.id }});
+      res.send({ ...token, user: { id: user.id }});
     } else {
       res.sendStatus(403);
     }
