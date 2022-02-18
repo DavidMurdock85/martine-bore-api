@@ -42,6 +42,7 @@ const main = async () => {
     app.use('/categories', require('./routes/categoryRoutes'));
     app.use('/products', require('./routes/productRoutes'));
     app.use('/images', require('./routes/imageRoutes'));
+    app.use('/support', require('./routes/supportRoutes'));
 
 
     const PORT = process.env.PORT || 3001;
