@@ -15,7 +15,7 @@ router.get('/:productRoute', async (req, res, next) => {
     const product = rows[0];
 
     //get images from the the product objects id
-    const [images] =  await db.query(`SELECT * FROM images where productId=${product.id}`);
+    const [images] =  await db.query(`SELECT * FROM images where productId=${product.id} order by id`);
 
     res.send({ ...product, images });
   } catch (err) {
