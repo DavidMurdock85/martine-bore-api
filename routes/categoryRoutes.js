@@ -43,7 +43,7 @@ router.get('/:categoryId/products', async (req, res, next) => {
 
     const products = await Promise.all(results.map(async product => {
       try {
-          const [images] = await db.query(`SELECT * FROM images where productId=${product.id}`);
+          const [images] = await db.query(`SELECT * FROM images where productId=${product.id} order by id`);
           product.images = images;
           return product;
       } catch (err) {
