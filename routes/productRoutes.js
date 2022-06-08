@@ -1,9 +1,37 @@
 const express = require('express'),
-    router = express.Router();
+      router = express.Router();
 
 const passport = require('passport');
 
 const fs = require('fs').promises;
+
+router.get('/incomplete',
+  passport.authenticate('jwt-bearer', { session: false }),
+  async (req, res, next) => {
+    try {
+      const db = req.app.get('db');
+      // select everything from products where id = productId
+
+      const [products] = await db.query('SELECT * FROM products where ' +
+        'title is null OR ' +
+        'description is null OR ' +
+        'details is null OR ' +
+        'period is null OR ' +
+        'date is null OR ' +
+        'origin is null OR ' +
+        'maker is null OR ' +
+        'medium is null OR ' +
+        'dimensions is null OR ' +
+        'productCondition is null OR ' +
+        'price is null'
+      );
+
+      res.send(products);
+    } catch (err) {
+      next(err);
+    }
+  }
+);
 
 //request to get product object from database and then get images for that product using its id
 router.get('/:productRoute', async (req, res, next) => {
@@ -22,6 +50,32 @@ router.get('/:productRoute', async (req, res, next) => {
     next(err);
   }
 });
+
+router.put('/:productId',
+  passport.authenticate('jwt-bearer', { session: false }),
+  async (req, res, next) => {
+    try {
+      const db = req.app.get('db');
+
+      // get updateListing from the request
+      const updateListing = req.body;
+
+      // create route from title
+      if(updateListing.title) {
+        updateListing.route = updateListing.title.replace(/\s+/g, '-').toLowerCase();
+      }
+
+      const query = `UPDATE products SET ? where id=${req.params.productId}`;
+
+      // update product row in database
+      await db.query(query, updateListing);
+
+      res.send(updateListing);
+    } catch (err) {
+      next(err);
+    }
+  }
+);
 
 //request to get product object from database and then get images for that product using its id
 router.delete('/:productId',
@@ -57,7 +111,7 @@ router.post('/:productId/images',
       const files = req.files;
       const imageResults = await Promise.all(Object.values(files).map(async (file, index) => {
         const imageName = `${routes.productRoute}-${index}.${file.name.split('.').pop()}`;
-        const original = `/${routes.categoryRoute}/${imageName}`;
+        const original = `${routes.categoryRoute}/${imageName}`;
 
         await fs.writeFile(`${process.env.IMAGES_DIR}/${original}`, file.data);
 

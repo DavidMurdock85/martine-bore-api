@@ -56,7 +56,6 @@ router.get('/:categoryId/products', async (req, res, next) => {
   }
 });
 
-// TODO requires auth
 router.post('/:categoryId/products',
   passport.authenticate('jwt-bearer', { session: false }),
   async (req, res, next) => {

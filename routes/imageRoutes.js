@@ -3,7 +3,7 @@ const express = require('express'),
 
 const passport = require('passport');
 
-//request to get delete a specific image
+// request to get delete a specific image
 router.delete('/:imageId',
   passport.authenticate('jwt-bearer', { session: false }),
   async (req, res, next) => {
