@@ -1,17 +1,31 @@
-const express = require('express'),
-      router = express.Router();
 
+// require express and set router to express router?
+const express = require('express'),
+  router = express.Router();
+
+// require passport  
 const passport = require('passport');
 
+//
 const fs = require('fs').promises;
 
-router.get('/incomplete',
-  passport.authenticate('jwt-bearer', { session: false }),
-  async (req, res, next) => {
-    try {
-      const db = req.app.get('db');
-      // select everything from products where id = productId
+//section 1?
 
+//
+router.get('/incomplete',
+
+  //
+  passport.authenticate('jwt-bearer', { session: false }),
+
+  async (req, res, next) => {
+
+    //
+    try {
+
+      // database is = 
+      const db = req.app.get('db');
+
+      // select everything from products where id = productId
       const [products] = await db.query('SELECT * FROM products where ' +
         'title is null OR ' +
         'description is null OR ' +
@@ -26,12 +40,16 @@ router.get('/incomplete',
         'price is null'
       );
 
+      //
       res.send(products);
+
     } catch (err) {
       next(err);
     }
   }
 );
+
+//section 2?
 
 //request to get product object from database and then get images for that product using its id
 router.get('/:productRoute', async (req, res, next) => {
@@ -43,13 +61,15 @@ router.get('/:productRoute', async (req, res, next) => {
     const product = rows[0];
 
     //get images from the the product objects id
-    const [images] =  await db.query(`SELECT * FROM images where productId=${product.id} order by id`);
+    const [images] = await db.query(`SELECT * FROM images where productId=${product.id} order by id`);
 
     res.send({ ...product, images });
   } catch (err) {
     next(err);
   }
 });
+
+//section 3?
 
 router.put('/:productId',
   passport.authenticate('jwt-bearer', { session: false }),
@@ -61,7 +81,7 @@ router.put('/:productId',
       const updateListing = req.body;
 
       // create route from title
-      if(updateListing.title) {
+      if (updateListing.title) {
         updateListing.route = updateListing.title.replace(/\s+/g, '-').toLowerCase();
       }
 
@@ -76,6 +96,8 @@ router.put('/:productId',
     }
   }
 );
+
+//section 4?
 
 //request to get product object from database and then get images for that product using its id
 router.delete('/:productId',
@@ -97,20 +119,30 @@ router.delete('/:productId',
 
 //request to get product object from database and then get images for that product using its id
 router.post('/:productId/images',
+
   passport.authenticate('jwt-bearer', { session: false }),
+
   async (req, res, next) => {
+
     try {
+
       const db = req.app.get('db');
+
       const productId = req.params.productId;
+
       const [rows] = await db.query(
         `SELECT pr.route as productRoute, ca.route as categoryRoute FROM products pr join categories ca on ca.id = pr.categoryId where pr.id='${productId}'`
       );
+
       const routes = rows[0];
 
       // create image on server (limit size?)
       const files = req.files;
+
       const imageResults = await Promise.all(Object.values(files).map(async (file, index) => {
+
         const imageName = `${routes.productRoute}-${index}.${file.name.split('.').pop()}`;
+
         const original = `${routes.categoryRoute}/${imageName}`;
 
         await fs.writeFile(`${process.env.IMAGES_DIR}/${original}`, file.data);
@@ -121,7 +153,7 @@ router.post('/:productId/images',
           thumbnail: original
         };
 
-        const [result] =  await db.query("INSERT INTO images SET ?", image);
+        const [result] = await db.query("INSERT INTO images SET ?", image);
 
         return {
           ...image,

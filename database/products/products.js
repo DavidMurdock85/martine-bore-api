@@ -1,24 +1,37 @@
-var newArrivals = require("./products-newArrivals");
-var artByMaker = require("./products-artByMaker");
-var artByPeriod = require("./products-artByPeriod");
-var artByRegion = require("./products-artByRegion");
-var clocks = require("./products-clocks");
-var jewelry = require("./products-jewelry");
 var paintings = require("./products-paintings");
-var sold = require("./products-sold");
-var tableware = require("./products-tableware");
+var glass = require("./products-glass");
+var jewelry = require("./products-jewelry");
+var sculptures = require("./products-sculptures");
+var furniture = require("./products-furniture");
+var objetDArt = require("./products-objectDArt");
+var ceramics = require("./products-ceramics");
+var porcelain = require("./products-porcelain");
+var silver = require("./products-silver");
+var clocks = require("./products-clocks");
+
+var newArrivals = require("./products-newArrivals");
+var seasonalAntiques = require("./products-seasonalAntiques");
+var featuredAntiques = require("./products-featuredAntiques");
+var everydayAntiques = require("./products-everydayAntiques");
 
 var products = {
-  ...newArrivals.newArrivals,
   ...paintings.paintings,
-  ...artByPeriod.artByPeriod,
-  ...artByRegion.artByRegion,
-  ...artByMaker.artByMaker,
-  ...tableware.tableware,
-  ...clocks.clocks,
+  ...glass.glass,
   ...jewelry.jewelry,
-  ...sold.sold
+  ...sculptures.sculptures,
+  ...furniture.furniture,
+  ...objetDArt.objectDArt,
+  ...ceramics.ceramics,
+  ...porcelain.porcelain,
+  ...silver.silver,
+  ...clocks.clocks,
+
+  ...newArrivals.newArrivals,
+  ...seasonalAntiques.seasonalAntiques,
+  ...featuredAntiques.featuredAntiques,
+  ...everydayAntiques.everydayAntiques,
 };
+
 
 module.exports = {
   products

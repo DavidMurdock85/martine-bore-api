@@ -2,6 +2,8 @@ const express = require('express'),
     router = express.Router();
 const passport = require('passport');
 
+//section 1?
+
 // GET @ /categories
 router.get('/', async (req, res, next) => {
   const db = req.app.get('db');
@@ -18,6 +20,8 @@ router.get('/', async (req, res, next) => {
 
 // note categories start at 2 for testing purposes
 
+//section 2?
+
 // GET @ /categories/:categoryRoute
 router.get('/:categoryRoute', async (req, res, next) => {
   try {
@@ -32,6 +36,8 @@ router.get('/:categoryRoute', async (req, res, next) => {
     next(err);
   }
 });
+
+//section 3?
 
 //get all products from a specific categoryId from a specific url
 router.get('/:categoryId/products', async (req, res, next) => {
@@ -55,6 +61,8 @@ router.get('/:categoryId/products', async (req, res, next) => {
     next(err);
   }
 });
+
+//section 4?
 
 router.post('/:categoryId/products',
   passport.authenticate('jwt-bearer', { session: false }),

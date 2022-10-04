@@ -1,6 +1,5 @@
 const express = require('express'),
     router = express.Router();
-
 const passport = require('passport');
 
 // request to get delete a specific image
