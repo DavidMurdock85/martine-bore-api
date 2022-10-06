@@ -9,7 +9,7 @@ const passport = require('passport');
 //
 const fs = require('fs').promises;
 
-//section 1?
+/* section 1 - get any incomplete listings from the database */
 
 //
 router.get('/incomplete',
@@ -49,7 +49,7 @@ router.get('/incomplete',
   }
 );
 
-//section 2?
+/* section 2 - get a product from the database */
 
 //request to get product object from database and then get images for that product using its id
 router.get('/:productRoute', async (req, res, next) => {
@@ -69,7 +69,7 @@ router.get('/:productRoute', async (req, res, next) => {
   }
 });
 
-//section 3?
+/* section 3 - add a product to the database */
 
 router.put('/:productId',
   passport.authenticate('jwt-bearer', { session: false }),
@@ -97,7 +97,7 @@ router.put('/:productId',
   }
 );
 
-//section 4?
+/* section 4 - delete a product from the database */
 
 //request to get product object from database and then get images for that product using its id
 router.delete('/:productId',
@@ -116,6 +116,8 @@ router.delete('/:productId',
     }
   }
 );
+
+/* section 5 -  */
 
 //request to get product object from database and then get images for that product using its id
 router.post('/:productId/images',
