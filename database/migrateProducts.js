@@ -32,7 +32,6 @@ const main = async () => {
         //await select id from categories where route is route = product.category
         const [rows] = await connection.query(`SELECT id FROM categories where route='${product.category}'`);
 
-
         const category = rows[0];
 
         //if category id is not undefined categoryId = category.id
