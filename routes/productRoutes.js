@@ -27,6 +27,8 @@ router.get('/incomplete',
 
       // select everything from products where id = productId
       const [products] = await db.query('SELECT * FROM products where ' +
+        //  'metaTitle is null OR ' +
+        //  'metaDescription is null OR ' +
         'title is null OR ' +
         'description is null OR ' +
         'details is null OR ' +
@@ -120,6 +122,7 @@ router.delete('/:productId',
 /* section 5 -  */
 
 //request to get product object from database and then get images for that product using its id
+
 router.post('/:productId/images',
 
   passport.authenticate('jwt-bearer', { session: false }),
@@ -139,6 +142,7 @@ router.post('/:productId/images',
       const routes = rows[0];
 
       // create image on server (limit size?)
+
       const files = req.files;
 
       const imageResults = await Promise.all(Object.values(files).map(async (file, index) => {
