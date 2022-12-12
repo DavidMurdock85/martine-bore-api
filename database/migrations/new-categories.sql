@@ -1,0 +1,11 @@
+insert into categories (title, route) values ('Paintings', 'paintings');
+insert into categories (title, route) values ('Glass', 'glass');
+insert into categories (title, route) values ('Jewelry', 'jewelry');
+insert into categories (title, route) values ('Sculptures', 'sculptures');
+insert into categories (title, route) values ('Furniture', 'furniture');
+insert into categories (title, route) values ('Objet D''art', 'object-d-art');
+insert into categories (title, route) values ('Ceramics', 'ceramics');
+insert into categories (title, route) values ('Porcelain', 'porcelain');
+insert into categories (title, route) values ('Everyday Antiques', 'everyday-antiques');
+insert into categories (title, route) values ('Seasonal Antiques', 'seasonal-antiques');
+insert into categories (title, route) values ('Featured Antiques', 'featured-antiques');
