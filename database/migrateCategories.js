@@ -40,21 +40,8 @@ const main = async () => {
 main();
 
 
-// node migrateCategories.js;
 
-// database password changed to: password
-      // to run sql scripts log into database first `mysql -u root -p martine` -> $source /path/to/file.sql
-      // NOTE: use pwd command to get full path of file (example: /Users/david/martine-bore-antiques/martine-bore-website-next-js/database/categories.sql)
-      // to run node scripts use `$node <script/path.js>` exampe: $node database-query.js
-      // create products table to recieved data
 
-// MYSQL stuff
-      // show databases;
-      // use martine; -- this sets the database you are "using" to martine
-      // show tables;
-      // describe table <table-name>
-      // select * from <table-name>;
 
-      // select * from categories;
 
 

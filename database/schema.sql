@@ -1,3 +1,6 @@
+
+/* Table for category information */
+
 CREATE TABLE categories (
     id int NOT NULL AUTO_INCREMENT,
     title varchar(50) NOT NULL,
@@ -5,6 +8,8 @@ CREATE TABLE categories (
     PRIMARY KEY (id),
     UNIQUE (route)
 );
+
+/* Table for product information */
 
 CREATE TABLE products (
     id int NOT NULL AUTO_INCREMENT,
@@ -25,6 +30,8 @@ CREATE TABLE products (
     UNIQUE (route)
 );
 
+/* Table for product images */
+
 CREATE TABLE images (
     id int NOT NULL AUTO_INCREMENT,
     productId int NOT NULL,
@@ -32,6 +39,17 @@ CREATE TABLE images (
     thumbnail varchar(200) NOT NULL,
     PRIMARY KEY (id)
 );
+
+/* Table for homepage image assets */
+
+CREATE TABLE assets (
+    id int NOT NULL AUTO_INCREMENT,
+    original varchar(200) NOT NULL,
+    thumbnail varchar(200) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+/* Table for user information */
 
 CREATE TABLE users (
     id int NOT NULL AUTO_INCREMENT,
