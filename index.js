@@ -8,11 +8,11 @@ const Strategy = require('passport-http-jwt-bearer').Strategy;
 
 const { dbUser, dbPassword, dbName } = require("./envVars");
 
-
 // set the value of calling the express function "app" to express
 const app = express();
 
 const main = async () => {
+    
     // create a connection object
     const pool = mysql.createPool({
         host: "localhost",
@@ -37,13 +37,12 @@ const main = async () => {
     app.use(express.urlencoded({ extended: true }));
     app.use(fileUpload());
     app.use(passport.initialize());
-
+    
     app.use('/auth', require('./routes/authRoutes'));
     app.use('/categories', require('./routes/categoryRoutes'));
     app.use('/products', require('./routes/productRoutes'));
     app.use('/images', require('./routes/imageRoutes'));
     app.use('/support', require('./routes/supportRoutes'));
-
 
     const PORT = process.env.PORT || 3001;
 

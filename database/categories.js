@@ -92,27 +92,6 @@ var categories = {
     title: "New Arrivals",
   },
 
-  // Categories - Seasonal Antiques
-
-  "seasonal-antiques": {
-    route: "seasonal-antiques",
-    title: "Seasonal Antiques",
-  },
-
-  // Categories - Featured Antiques
-
-  "featured-antiques": {
-    route: "featured-antiques",
-    title: "Featured Antiques",
-  },
-
-  // Categories - Everyday Antiques
-
-  "everyday-antiques": {
-    route: "everyday-antiques",
-    title: "Everyday Antiques",
-  },
-
 };
 
 module.exports = {

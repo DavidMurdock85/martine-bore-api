@@ -8,11 +8,7 @@ var ceramics = require("./products-ceramics");
 var porcelain = require("./products-porcelain");
 var silver = require("./products-silver");
 var clocks = require("./products-clocks");
-
 var newArrivals = require("./products-newArrivals");
-var seasonalAntiques = require("./products-seasonalAntiques");
-var featuredAntiques = require("./products-featuredAntiques");
-var everydayAntiques = require("./products-everydayAntiques");
 
 var products = {
   ...paintings.paintings,
@@ -25,13 +21,8 @@ var products = {
   ...porcelain.porcelain,
   ...silver.silver,
   ...clocks.clocks,
-
   ...newArrivals.newArrivals,
-  ...seasonalAntiques.seasonalAntiques,
-  ...featuredAntiques.featuredAntiques,
-  ...everydayAntiques.everydayAntiques,
 };
-
 
 module.exports = {
   products
