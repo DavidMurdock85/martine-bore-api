@@ -1,6 +1,9 @@
-// Import necessary packages
-const express = require('express');
-const router = express.Router();
+
+// require express and set router to express router?
+const express = require('express'),
+  router = express.Router();
+
+// require passport
 const passport = require('passport');
 const fs = require('fs').promises;
 
@@ -52,8 +55,8 @@ router.get('/:productRoute', async (req, res, next) => {
     // Get the first product from the result set
     const product = rows[0];
 
-    // Query the database for all images associated with the product
-    const [images] = await db.query(`SELECT * FROM images where productId=${product.id} order by id`);
+    //get images from the the product objects id
+    const [images] = await db.query(`SELECT * FROM images where productId=${product.id} order by original`);
 
     // Send the product and its images as a response
     res.send({ ...product, images });
